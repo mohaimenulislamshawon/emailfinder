@@ -1,0 +1,31 @@
+{
+  "name": "emailfinder",
+  "version": "1.0.0",
+  "description": "Bulk email finder - extract emails from multiple websites",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "email",
+    "scraper",
+    "bulk",
+    "finder"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.13.6",
+    "bullmq": "^5.71.1",
+    "cheerio": "^1.2.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "ioredis": "^5.10.1",
+    "p-limit": "^5.0.0",
+    "playwright": "^1.58.2",
+    "tldts": "^7.0.27"
+  }
+}

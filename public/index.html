@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Finder Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>📧 Email Finder Tool</h1>
+    <p class="subtitle">Extract emails from multiple websites in bulk</p>
+
+    <div class="form">
+        <textarea 
+            id="urlInput" 
+            placeholder="Enter website URLs (one per line)&#10;Example:&#10;example.com&#10;company.com&#10;website.org"
+            spellcheck="false"
+        ></textarea>
+        <br><br>
+        <div class="button-group">
+            <button onclick="submitUrl()" class="btn btn-primary">🔍 Find Emails</button>
+            <button onclick="clearResults()" class="btn btn-secondary">🗑️ Clear Results</button>
+            <button onclick="copyCheckedEmails()" class="btn btn-success">📋 Copy Selected Emails</button>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading" style="display:none;" class="loading">
+        <div class="spinner"></div>
+        <p>Processing URLs...</p>
+    </div>
+
+    <div class="results-header">
+        <h2>Results</h2>
+        <div class="select-actions">
+            <button onclick="selectAllEmails()" class="btn-select">☑ Select All</button>
+            <button onclick="deselectAllEmails()" class="btn-select">☐ Deselect All</button>
+            <span id="selectedCount" class="selected-count">0 selected</span>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Domain</th>
+                <th>Emails</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="resultsTable">
+            <tr><td colspan="5" style="text-align: center; color: #999; padding: 30px;">⏳ No results yet. Submit URLs to start...</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
